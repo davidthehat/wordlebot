@@ -32,10 +32,12 @@ var commonLetters = {
     'q': 112,
 }
 
-var simMode = true;
+var simMode = false;
 var simWord;
 var simGuesses = [];
 var verbose = true;
+
+t();
 
 var log = function(message) {
     //logs message provided that verbose is true
