@@ -5,6 +5,7 @@ var log = function(message) {
     }
 }
 
+//remove? dont think this is used
 var removeLetter = function(arr, letter) {
     a = [];
     for (var i = 0; i < arr.length; i++) {
@@ -12,6 +13,7 @@ var removeLetter = function(arr, letter) {
             a.push(arr[i])
         }
     }
+    return a;
 }
 
 //from https://stackoverflow.com/questions/33656708/check-for-repeated-characters-in-a-string-javascript

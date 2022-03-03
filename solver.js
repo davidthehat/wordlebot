@@ -20,4 +20,5 @@ var main = async function() {
     return final == simWord;
 
 }
-main();
+
+//main();
