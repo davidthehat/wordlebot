@@ -9,15 +9,17 @@ var main = async function() {
         simGuesses = [];
         simWord = getPossibleAnswers()[Math.floor(Math.random() * getPossibleAnswers().length)];
     }
-    simWord = 'pause';
+    //simWord = 'pause';
     //log(simWord);
-    var final = await runGreedyDoubleElimination(getPossibleAnswers());
+    var final = await runGreedyDoubleElimination(getWordlist());
 
     //var final = await runSequence(['adieu', 'quean', 'usage'], getWordlist());
 
     //final = final.value();
-    console.log(final);
-    console.log(simWord);
+    log(final);
+    if (simMode) {
+        log(simWord);
+    }
     return final == simWord;
 
 }
