@@ -12,6 +12,7 @@ var main = async function() {
     simWord = 'pause';
     //log(simWord);
     var final = await runGreedyDoubleElimination(getPossibleAnswers());
+
     //var final = await runSequence(['adieu', 'quean', 'usage'], getWordlist());
 
     //final = final.value();

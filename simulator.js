@@ -46,10 +46,11 @@ var runSim = async function(multi) {
     verbose = false;
     var errors = 0;
     var errorArr = [];
+    allWords = getPossibleAnswers().concat(getWordlist());
     for (var i = 0; i < getPossibleAnswers().length * multi; i++) {
         simGuesses = [];
         simWord = getPossibleAnswers()[i];
-        var final = await runGreedyDoubleElimination(getPossibleAnswers());
+        var final = await runGreedyDoubleElimination(allWords);
         if (final != simWord) {
             errors += 1;
             errorArr = errorArr.concat(simWord);
@@ -57,5 +58,4 @@ var runSim = async function(multi) {
         console.log(i);
     }
     return [errors, errorArr];
-
 }
