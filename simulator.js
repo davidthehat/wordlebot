@@ -1,5 +1,6 @@
-var simGradeGuess = function(word) {
+var simGradeGuess = function(guess) {
     //given a string, returns the grading based on the simWord
+    return gradeGuess(simWord, guess);
     var arr = Array(word.length).fill("absent");
     simWordCopy = simWord.split("");
 
