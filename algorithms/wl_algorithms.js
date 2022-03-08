@@ -1,4 +1,4 @@
-var runExpectedValue = async function(arr, ws) {
+var runExpectedValue = async function(arr) {
     //For each word, given the current board state, finds the expected value for the word.
     //Does this using the expectedValue function.
     var correct = []; //array of correct letters in the appropriate slot
@@ -8,7 +8,7 @@ var runExpectedValue = async function(arr, ws) {
     var absent = []; //array of letters that are not in the word. must not contain letters that are in correct or present position
     gameState = {correct: correct, absent: absent, present: present};
     
-    var currWords = arr; // the set of possible words
+    var currWords = [...arr]; // the set of possible words
 
     var guessedWords = []; //array of guessed words
     for (var i = 0; i < 6; i++) {
@@ -21,7 +21,7 @@ var runExpectedValue = async function(arr, ws) {
         
         log(guessedWords);
         
-        var best = getBestExpectedValue(gameState, ws, currWords);
+        var best = getBestExpectedValue(gameState, arr, currWords);
         log(best);
         typeword(best);
         guessedWords = guessedWords.concat(best);
@@ -30,7 +30,7 @@ var runExpectedValue = async function(arr, ws) {
         }
         update(i, best, gameState.correct, gameState.present, gameState.absent);
         log(updated);
-        currWords = updateWords(currWords, gameState.correct, gameState.present, gameState.absent);
+        currWords = updateWords(currWords, gameState.correct, gameState.present, gameState. absent);
         log(currWords);
     }
     return best;
