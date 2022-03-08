@@ -248,7 +248,7 @@ var value = function(gameState, guess, actualWord, remainingWords, f) {
     let grade = gradeGuess(actualWord, guess);
     let next = nextState(grade, guess, gameState);
     let nextRemainingWords = updateWords(remainingWords, next.correct, next.present, next.absent);
-    return remainingWords/nextRemainingWords.length;
+    return remainingWords.length/nextRemainingWords.length;
     //todo do stuff with f (value function)
     //nextRemainingWords.map(f).reduce((a, b) => a + b, 0)
 }
