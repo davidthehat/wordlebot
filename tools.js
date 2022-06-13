@@ -10,6 +10,7 @@ var cloneState= function(state) {
     Object.assign(newState, state);
     newState.correct = [...state.correct];
     newState.absent = [...state.absent];
+    newState.present = {...state.present};
     return newState;
 }
 
