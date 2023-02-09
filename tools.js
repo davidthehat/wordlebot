@@ -57,6 +57,7 @@ var findBest = function(arr, dict) {
 }
 
 var update = function(i, guess, correct, present, absent) {
+    // debugger;
     var notabsent = []; //updated this pass, the letters that must not be added to absent
     for (var j = 0; j < 5; j++) {
         state = getState(i, j);

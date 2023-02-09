@@ -1,11 +1,21 @@
 var getState = function(r, c) {
     //returns state of letter at given row and column (0 index)
-    var gameapp = document.querySelector("game-app");
+    var board = document.getElementsByClassName("Board-module_board__jeoPS");
     if (simMode) {
         return simGuesses[r][c];
     }
-    return gameapp.shadowRoot.querySelectorAll("game-row")[r].shadowRoot.querySelectorAll("game-tile")[c]._state;
+    return board[0].children[r].children[c].children[0].dataset["state"];
 }
+
+var getLetter = function(r, c) {
+    //returns state of letter at given row and column (0 index)
+    var localstorage = window.localStorage.getItem("nyt-wordle-moogle/ANON");
+    if (simMode) {
+        return simGuesses[r][c];
+    }
+    return JSON.parse(localstorage).game.boardState[r][c];
+}
+    
 
 var key = function(letter) {
     document.dispatchEvent(
@@ -21,7 +31,7 @@ var typeword = function(word) {
         simTypeGuess(word);
         return;
     }
-
+    console.log(word)
     const arr = word.split("");
     arr.map(key);
     key("Enter");

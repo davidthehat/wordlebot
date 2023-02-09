@@ -1,4 +1,5 @@
 var getJSURL = function() {
+    return "https://www.nytimes.com/games-assets/v2/wordle.104e42d22ba0a911c628.js"
     let url1 = window.location.href.match(/.*\//g);
     if (url1 == null) {
         throw "getJSURL returning null";
@@ -18,8 +19,4 @@ var fetchWordsData = async function() {
 
 var getWordlist = function() {
     return wordsArray[0];
-}
-
-var getPossibleAnswers = function() {
-    return wordsArray[1];
 }
