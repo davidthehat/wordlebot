@@ -12,6 +12,7 @@ async function runGreedy(arr, dict) {
     var currWords = arr;
     var best;
     //6 times
+
     for (var i = 0; i < 6; i++) {
         if (currWords.length != 1) {
             best = findBest(removeDoubleLetters(currWords), dict);
@@ -64,7 +65,8 @@ var runGreedyElimination = async function(arr) {
 
     var currWords = arr; // the set of possible words
     var noDouble = removeDoubleLetters(currWords);
-    generatedCommonLetters = generateDictionary(getPossibleAnswers());
+    generatedCommonLetters = generateDictionary(getWordlist());
+
     for (var i = 0; i < 6; i++) {
         //
         if (currWords.length == 1 || i == 5) {
@@ -84,6 +86,7 @@ var runGreedyElimination = async function(arr) {
             await new Promise(r => setTimeout(r, 3000));
         }
         var updated = update(i, best, correct, present, absent);
+        log(updated)
         correct = updated[0];
         present = updated[1];
         absent = updated[2];
@@ -107,7 +110,8 @@ var runGreedyDoubleElimination = async function(arr) {
     var noDouble = removeDoubleLetters(currWords);
 
     var guessedWords = []; //array of guessed words
-    generatedCommonLetters = generateDictionary(getPossibleAnswers());
+    generatedCommonLetters = generateDictionary(getWordlist());
+    console.log(generatedCommonLetters)
     for (var i = 0; i < 6; i++) {
         //
         if (currWords.length == 1 || i == 5) {

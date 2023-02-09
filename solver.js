@@ -7,11 +7,13 @@ var main = async function() {
 
     if (simMode) {
         simGuesses = [];
-        simWord = getPossibleAnswers()[Math.floor(Math.random() * getPossibleAnswers().length)];
+        simWord = getWordlist()[Math.floor(Math.random() * getWordlist().length)];
     }
     //simWord = 'pause';
     //log(simWord);
-    var fullwordlist = getWordlist().concat(getPossibleAnswers());
+    var fullwordlist = getWordlist();
+    console.log(fullwordlist)
+    console.log("TEST")
     var final = await runGreedyDoubleElimination(fullwordlist);
 
     //var final = await runSequence(['adieu', 'quean', 'usage'], getWordlist());
