@@ -1,14 +1,14 @@
 var main = async function() {
     simMode = false;
-    simWord = "default";
+    if(typeof process === 'object') {
+        //we are in Node! This means we are being asked to simulate the game.
+        simMode = true;
+    }
+    //simWord = "default";
     simGuesses = [];
     verbose = true;
     await fetchWordsData();
 
-    if (simMode) {
-        simGuesses = [];
-        simWord = getWordlist()[Math.floor(Math.random() * getWordlist().length)];
-    }
     //simWord = 'pause';
     //log(simWord);
     var fullwordlist = getWordlist();
@@ -23,7 +23,7 @@ var main = async function() {
     if (simMode) {
         log(simWord);
     }
-    return final == simWord;
+    return final;
 
 }
 main();
