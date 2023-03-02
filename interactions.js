@@ -1,21 +1,11 @@
 var getState = function(r, c) {
     //returns state of letter at given row and column (0 index)
     if (simMode) {
-        return simGuesses[r][c];
+        return simGuesses[r][c][0];
     }
     var board = document.getElementsByClassName("Board-module_board__jeoPS");
     return board[0].children[r].children[c].children[0].dataset["state"];
-}
-
-var getLetter = function(r, c) {
-    //returns state of letter at given row and column (0 index)
-    if (simMode) {
-        return simGuesses[r][c];
-    }
-    var localstorage = window.localStorage.getItem("nyt-wordle-moogle/ANON");
-    return JSON.parse(localstorage).game.boardState[r][c];
-}
-    
+}    
 
 var key = function(letter) {
     document.dispatchEvent(
