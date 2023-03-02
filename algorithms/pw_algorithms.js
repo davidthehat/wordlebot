@@ -117,7 +117,6 @@ var runGreedyDoubleElimination = async function(arr) {
         if (currWords.length == 1 || i == 5) {
             log("short circut");
             typeword(currWords[0]);
-            log("simGuesses" + simGuesses);
             return simGuesses;
 
         }
