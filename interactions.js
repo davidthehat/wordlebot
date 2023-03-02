@@ -1,7 +1,7 @@
 var getState = function(r, c) {
     //returns state of letter at given row and column (0 index)
     if (simMode) {
-        return simGuesses[r][c][0];
+        return simGuesses[r][0][c];
     }
     var board = document.getElementsByClassName("Board-module_board__jeoPS");
     return board[0].children[r].children[c].children[0].dataset["state"];
