@@ -35,7 +35,7 @@ var simGradeGuess = function(word) {
 
 var simTypeGuess = function(word) {
     //given a string, simulate guessing the word (update guesses)
-    simGuesses = simGuesses.concat([[[simGradeGuess(word)], word]]);
+    simGuesses = simGuesses.concat([[simGradeGuess(word), word]]);
 }
 
 var runSim = async function(multi) {
