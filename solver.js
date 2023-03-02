@@ -12,8 +12,6 @@ var main = async function() {
     //simWord = 'pause';
     //log(simWord);
     var fullwordlist = getWordlist();
-    console.log(fullwordlist)
-    console.log("TEST")
     var final = await runGreedyDoubleElimination(fullwordlist);
 
     //var final = await runSequence(['adieu', 'quean', 'usage'], getWordlist());
