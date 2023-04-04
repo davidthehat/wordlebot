@@ -40,13 +40,17 @@ var scoreArr = function(arr, dict) {
     return arr.map((x) => scoreString(x, dict)).reduce((x, y) => x + y);
 }
 
-var findBest = function(arr, dict) {
+var findBest = function(arr, dict, guessedWords) {
     //given an array of words, returns the word with the best score
+    //cannot return a word that has already been guessed
 
     //for loop
     besti = 0;
     bests = 0;
     for (var i = 0; i < arr.length; i++) {
+        if (guessedWords.includes(arr[i])) {
+            continue;
+        }
         score = scoreString(arr[i], dict);
         if (score > bests) {
             bests = score;
