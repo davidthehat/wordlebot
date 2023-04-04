@@ -134,7 +134,7 @@ var runGreedyDoubleElimination = async function(arr) {
         }
         log(dict);
         log(dict_t);
-        var best = findBest(noDouble, dict, guessedWordss);
+        var best = findBest(noDouble, dict, guessedWords);
         log(best);
         typeword(best);
         guessedWords = guessedWords.concat(best);
